@@ -27,11 +27,11 @@
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list grid">
             <li class="nav__item">
-              <a href="#home" class="nav__link"> <i class="ri-home-5-line"></i> Home </a>
+              <a href="#home" class="nav__link active-link"> <i class="ri-home-5-line"></i> Home </a>
             </li>
 
             <li class="nav__item">
-              <a href="#skills" class="nav__link"> <i class="ri-trophy-line"></i> Skills </a>
+              <a href="#skills" class="nav__link active-link" > <i class="ri-trophy-line"></i> Skills </a>
             </li>
             <li class="nav__item">
               <a href="#qualification" class="nav__link"> <i class="ri-book-open-line"></i> Qualification </a>
@@ -52,7 +52,7 @@
           </div>
         </div>
         <div class="nav__buttons">
-          <!-- <i class="ri-moon-line change-theme" id="theme-button"></i> -->
+          <i class="ri-moon-line change-theme" id="theme-button"></i>
 
           <div class="nav__toggle" id="nav-toggle">
             <i class="ri-menu-4-line"></i>
@@ -84,6 +84,9 @@
               <a href="https://www.linkedin.com/in/yaumulmajidd/" target="_blank" class="home__social-link">
                 <i class="ri-linkedin-box-fill"></i>
               </a>
+              <a href="https://www.instagram.com/itechserv.id/?igsh=czlrZHh0bml4NTF5&utm_source=qr" target="_blank" class="home__social-link">
+                <i class="ri-instagram-line"></i>
+              </a>
               <a href="https://wa.me/6281282132875" target="_blank" class="home__social-link">
                 <i class="ri-whatsapp-line"></i>
               </a>
@@ -94,7 +97,7 @@
             <div>
               <h3 class="home__info-title">Biography</h3>
               <p class="home__info-description">
-                Hi, I'm Majid, Full Stack Developer with over 3 years experience in web and mobile development. I specialize in building end-to-end web applications, from front-end design to backend management. Based in Indonesia.
+                Hi, I’m Majid, a Full Stack Developer with over 3 years of experience in web and mobile development. I specialize in building comprehensive, end-to-end web applications, handling everything from front-end design to back-end management. Based in Indonesia.
               </p>
             </div>
             <div>
@@ -117,15 +120,15 @@
 
           <div class="home__info">
             <div>
-              <h3 class="home__info-title">YEARS OF EXPERIENCE</h3>
+              <h3 class="home__info-title">Years Of Experience</h3>
               <p class="home__info-number">03+</p>
             </div>
             <div>
-              <h3 class="home__info-title">COMPLETED PROJECTS</h3>
+              <h3 class="home__info-title">Completed Projects</h3>
               <p class="home__info-number">10+</p>
             </div>
             <div>
-              <h3 class="home__info-title">COMPANIES WORKED</h3>
+              <h3 class="home__info-title">Companies Work</h3>
               <p class="home__info-number">01+</p>
             </div>
           </div>
@@ -164,6 +167,13 @@
                 </div>
                 <h3 class="skills__name">JavaScript</h3>
                 <span class="skills__subtitle">Intermediate</span>
+              </div>
+              <div class="skills__data">
+                <div class="skills__blob">
+                  <img src="assets/img/icons8-vue-js-480.png" alt="" class="skills image">
+                </div>
+                <h3 class="skills__name">Vue Js</h3>
+                <span class="skills__subtitle">Basic</span>
               </div>
               <div class="skills__data">
                 <div class="skills__blob">
@@ -320,13 +330,18 @@
           <div class="projects__container swiper">
             <div class="swiper-wrapper">
               <div class="projects__content swiper-slide">
-                <img src="assets/img/project1.jpg" alt="projects image" class="projects__img">
+                <img src="assets/img/project5.png" alt="projects image" class="projects__img">
 
                 <div>
-                  <span class="projects__subtitle">Web</span>
-                  <h1 class="projects__title">Company Profile</h1>
+                  <span class="projects__subtitle">Web Custom</span>
+                  <h1 class="projects__title">IKK LAN RI</h1>
 
-                  <a href="" class="projects__button">
+                  <div class="projects__tech-stack">
+                    <span class="tech-item">Java Springboot</span>
+                    <span class="tech-item">Vue JS</span>
+                  </div>
+
+                  <a href="https://ikk.lan.go.id/" class="projects__button">
                     View Demo <i class="ri-arrow-right-line"></i>
                   </a>
                 </div>
@@ -337,6 +352,11 @@
                 <div>
                   <span class="projects__subtitle">Web</span>
                   <h1 class="projects__title">Car Wash</h1>
+
+                  <div class="projects__tech-stack">
+                    <span class="tech-item">Java Springboot</span>
+                    <span class="tech-item">Vue JS</span>
+                  </div>
 
                   <a href="" class="projects__button">
                     View Demo <i class="ri-arrow-right-line"></i>
@@ -350,6 +370,11 @@
                   <span class="projects__subtitle">Web</span>
                   <h1 class="projects__title">Ticket Online</h1>
 
+                  <div class="projects__tech-stack">
+                    <span class="tech-item">Java Springboot</span>
+                    <span class="tech-item">Vue JS</span>
+                  </div>
+
                   <a href="" class="projects__button">
                     View Demo <i class="ri-arrow-right-line"></i>
                   </a>
@@ -361,6 +386,11 @@
                 <div>
                   <span class="projects__subtitle">Web</span>
                   <h1 class="projects__title">E-commerce</h1>
+
+                  <div class="projects__tech-stack">
+                    <span class="tech-item">Java Springboot</span>
+                    <span class="tech-item">Vue JS</span>
+                  </div>
 
                   <a href="" class="projects__button">
                     View Demo <i class="ri-arrow-right-line"></i>
@@ -394,28 +424,27 @@
                 </p>
 
                 <div>
-                  <h3 class="testimonial__name">Hafiz</h3>
-                  <span class="testimonial__subtitle">Client</span>
+                  <h3 class="testimonial__name">Hafizh</h3>
+                  <span class="testimonial__subtitle">Fastwork Client</span>
                 </div>
               </div>
               <div class="testimonial__content swiper-slide">
                 <p class="testimonial">
-                  “Working with Majid is to give a good impression, I carry out my project at a good cost, with excellent quality and attention. Great service and recommended.”
+                  “Majid delivered outstanding results! My project was completed on time with quality that exceeded my expectations. Very satisfied with the service provided, highly professional.”
                 </p>
 
                 <div>
-                  <h3 class="testimonial__name">Hafiz1</h3>
-                  <span class="testimonial__subtitle">Client</span>
+                  <h3 class="testimonial__name">Marulitua</h3>
+                  <span class="testimonial__subtitle">Fastwork Client</span>
                 </div>
               </div>
               <div class="testimonial__content swiper-slide">
                 <p class="testimonial">
-                  “Working with Majid is to give a good impression, I carry out my project at a good cost, with excellent quality and attention. Great service and recommended.”
+                  “An amazing experience working with Majid. The project was completed quickly and with great quality. I will definitely recommend him to my friends.”
                 </p>
-
                 <div>
-                  <h3 class="testimonial__name">Hafiz2</h3>
-                  <span class="testimonial__subtitle">Client</span>
+                  <h3 class="testimonial__name">Fadli</h3>
+                  <span class="testimonial__subtitle">Global Client</span>
                 </div>
               </div>
             </div>
@@ -447,15 +476,15 @@
               <span class="contact__data__title">Email</span>
               <span class="contact__data__info">yaumulmajid@gmail.com</span>
 
-              <a href="" class="contact__button">
-                Write me
+              <a href="https://mail.google.com/" class="contact__button">
+                Write me <i class="ri-arrow-right-line"></i>
               </a>
             </div>
             <div class="contact__data">
-              <span class="contact__data__title">Whatsapp</span>
-              <span class="contact__data__info">+6281282132875</span>
+              <span class="contact__data__title">Upwork Frerlance</span>
+              <span class="contact__data__info">Yaumul M.</span>
 
-              <a href="https://wa.me/6281282132875" target="_blank" class="contact__button">
+              <a href="https://www.upwork.com/freelancers/~0151f4581abec9c661" target="_blank" class="contact__button">
                 Write me <i class="ri-arrow-right-line"></i>
               </a>
             </div>
@@ -480,31 +509,64 @@
               <input type="text" name="user_name" required placeholder="Write your names" class="contact__form-input" id="contact-name">
             </div>
             <div class="contact__form-div">
-              <label class="contact__form-tag">Mail</label>
+              <label class="contact__form-tag">Email</label>
               <input type="text" name="user_email" required placeholder="Write your email" class="contact__form-input" id="contact-email">
             </div>
             <div class="contact__form-div contact__form-area">
               <label class="contact__form-tag">Project</label>
               <textarea name="user_project" placeholder="Write your project" class="contact__form-input" id="contact-project"></textarea>
             </div>
-            <button class="contact__button">
 
+            <p class="contact__message" id="contact-message"></p>
+            <button type="submit" class="contact__button">
+              Submit <i class="ri-arrow-right-up-line"></i>
             </button>
           </form>
-        </div>
-        <div class="contact__content">
-          <h3 class="contact__title">
-            
-          </h3>
         </div>
       </div>
       </section>
     </main>
 
     <!--==================== FOOTER ====================-->
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer__container container">
+        <h1 class="footer__title">Yaumul Majid</h1>
+        <p>Full Stack Developer</p>
+        <ul class="footer__list">
+          <li>
+            <a href="#home" class="footer__link">Home</a>
+          </li>
+          <li>
+            <a href="#skills" class="footer__link">Skills</a>
+          </li>
+          <li>
+            <a href="#projects" class="footer__link">Projects</a>
+          </li>
+        </ul>
+
+        <ul class="footer__social">
+          <a href="https://www.linkedin.com/in/yaumulmajidd/" target="_blank" class="footer__social-link">
+            <i class="ri-linkedin-box-fill"></i>
+          </a>
+          <a href="https://www.youtube.com/@yaumulmajid" target="_blank" class="footer__social-link">
+            <i class="ri-youtube-fill"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+            <i class="ri-instagram-line"></i>
+          </a>
+        </ul>
+
+        <span class="footer__copy">
+          &#169; Copyright yaumulmajid. All rights reserved
+        </span>
+      </div>
+    </footer>
 
     <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-line"></i>
+    </a>
+
 
     <!--=============== SCROLLREVEAL ===============-->
     <script src=""></script>
@@ -513,6 +575,7 @@
     <script src="assets/js/swiper-bundle.min.js"></script>
 
     <!--=============== EMAIL JS ===============-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>
