@@ -21,8 +21,8 @@ import logoDell from '@/images/logos/dell.svg'
 import logoFYPM from '@/images/logos/fypm1.svg'
 import logoGWC from '@/images/logos/gwcLogo1.png'
 import logoTXST from '@/images/logos/txstStar.png'
-import halcyoncore from '@/images/logos/hc-logo.png'
-import amazonIcon from '@/images/logos/amazonlogo.png'
+import halcyoncore from '@/images/logos/gsLogo.jpg'
+import amazonIcon from '@/images/logos/indivaraLogo.png'
 
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
@@ -253,10 +253,9 @@ export default function Home({ articles }) {
             Software Engineer, DevOps enthusiast and Lifelong Learner.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I&apos;m Victoria, a computer science student and the Founder and
-            President of Girls Who Code at Texas State University. I am
-            passionate about frontend engineering, empowering women in tech, and
-            creating inclusive spaces for beginners in computer science.
+            I&apos;m Majid, a dedicated developer who transforms ideas into powerful web solutions. 
+            With expertise in full-stack development, I'm passionate about creating intuitive applications that solve real-world problems. 
+            I believe in continuous learning and staying at the forefront of technology to deliver the best digital experiences.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink

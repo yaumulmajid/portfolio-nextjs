@@ -61,35 +61,25 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I&apos;m Victoria. A leader, artist, and frontend enthusiast in
-              Austin, TX.
+                Hey there! 👋🏻 I'm Majid | Turning Ideas into Digital Reality
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I&apos;m a non-traditional first-generation student pursuing a
-                Bachelor of Science in Computer Science. I&apos;m entering my
-                senior year at Texas State University and I am the founder and
-                president of Girls Who Code TXST. My mission is to empower women
-                and non-binary students to take the reins of their independence
-                and become the leaders they have always admired.
+                I'm a passionate Software Engineer with over 3 years of dedicated experience crafting robust web solutions. My expertise lies in building seamless end-to-end web applications, 
+                where I blend creative front-end design with powerful backend architecture to create exceptional user experiences.
               </p>
               <p>
-                I&apos;ve traveled extensively through Southeast Asia and lived
-                in Shanghai, China for a year while teaching English. In 2020, I
-                launched an e-commerce store selling stickers and prints of my
-                artwork to generate donations for various organizations
-                supporting Black and transgender communities.
+                Throughout my journey, I've mastered various modern technologies and frameworks, 
+                constantly pushing the boundaries of what's possible in web development. 
+                I take pride in transforming complex problems into elegant, efficient solutions that not only meet but exceed client expectations. Whether it's architecting new applications from the ground up, optimizing existing systems, or implementing cutting-edge features, 
+                I approach each project with enthusiasm and attention to detail.
               </p>
               <p>
-                This past summer, I was a frontend engineer intern at a startup
-                called F*** You Pay Me, creating an app to help influencers (a
-                female-majority community) gain pay equality and fair treatment
-                when making deals with brands.
+                Programming isn't just my profession—it's my craft and calling. I thrive on staying ahead of industry trends and best practices, ensuring that every line of code I write contributes to creating impactful digital experiences. My commitment to clean, 
+                maintainable code and user-centric design has helped businesses achieve their digital transformation goals.
               </p>
               <p>
-                In my free time, you can find me rock climbing, working out,
-                dancing, or at home spending quality time with my two
-                cockatiels.
+                In my personal life, I am fortunate to be the husband of my best friend and soulmate who always supports every step of my life. Outside of work routines, I have a passion for reading to sharpen my knowledge, running to maintain fitness, and enjoy exploring new places as my way to unwind while discovering the beauty of nature around me.
               </p>
             </div>
           </div>
@@ -102,25 +92,25 @@ export default function About() {
                 Follow on Instagram
               </SocialLink>
               <SocialLink
-                href="https://github.com/vjordan-cs"
+                href="https://github.com/yaumulmajid"
                 icon={GitHubIcon}
                 className="mt-4"
               >
                 Follow on GitHub
               </SocialLink>
               <SocialLink
-                href="https://linkedin.com/in/victoria-jordan01/"
+                href="https://linkedin.com/in/yaumulmajidd/"
                 icon={LinkedInIcon}
                 className="mt-4"
               >
                 Follow on LinkedIn
               </SocialLink>
               <SocialLink
-                href="mailto:vjordan.cs@gmail.com"
+                href="mailto:yaumulmajid@gmail.com"
                 icon={MailIcon}
                 className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
               >
-                vjordan.cs@gmail.com
+                yaumulmajid@gmail.com
               </SocialLink>
             </ul>
           </div>
