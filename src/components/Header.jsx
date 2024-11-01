@@ -6,7 +6,7 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.jpg'
-import { Fragment, useEffect, useRef } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 
 function CloseIcon(props) {
   return (
@@ -69,13 +69,57 @@ function MoonIcon(props) {
   )
 }
 
-function MobileNavItem({ href, children }) {
+function SearchIcon(props) {
   return (
-    <li>
-      <Popover.Button as={Link} href={href} className="block py-2">
-        {children}
-      </Popover.Button>
-    </li>
+    <svg 
+      viewBox="0 0 24 24" 
+      aria-hidden="true"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path
+        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+        fill="none"
+        stroke="currentColor"
+      />
+    </svg>
+  )
+}
+
+function MobileNavItem({ href, children }) {
+  const [showMaintenance, setShowMaintenance] = useState(false)
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    if (href === '/courses' || href === '/contact') {
+      setShowMaintenance(true)
+    } else {
+      window.location.href = href
+    }
+  }
+
+  return (
+    <>
+      {showMaintenance && (
+        <UnderMaintenanceDialog 
+          isOpen={showMaintenance} 
+          setIsOpen={setShowMaintenance} 
+          pageName={href.replace('/', '')} 
+        />
+      )}
+      <li>
+        <Popover.Button
+          as="a"
+          href={href}
+          onClick={handleClick}
+          className="block py-2"
+        >
+          {children}
+        </Popover.Button>
+      </li>
+    </>
   )
 }
 
@@ -124,6 +168,7 @@ function MobileNavigation(props) {
                 <MobileNavItem href="/about">About</MobileNavItem>
                 <MobileNavItem href="/articles">Blogs</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
+                <MobileNavItem href="/courses">Courses</MobileNavItem>
                 {/* <MobileNavItem href="/speaking">Speaking</MobileNavItem> */}
                 <MobileNavItem href="/uses">Uses</MobileNavItem>
               </ul>
@@ -137,27 +182,46 @@ function MobileNavigation(props) {
 
 function NavItem({ href, children }) {
   let isActive = useRouter().pathname === href
+  const [showMaintenance, setShowMaintenance] = useState(false)
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    if (href === '/courses' || href === '/contact') {
+      setShowMaintenance(true)
+    } else {
+      window.location.href = href
+    }
+  }
 
   return (
-    <li>
-      <Link
-        href={href}
-        className={clsx(
-          'relative block px-3 py-2 transition',
-          isActive
-            ? 'text-blue-500 dark:text-blue-400'
-            : 'hover:text-blue-500 dark:hover:text-blue-400'
-        )}
-      >
-        {children}
-        {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0" />
-        )}
-      </Link>
-    </li>
+    <>
+      {showMaintenance && (
+        <UnderMaintenanceDialog 
+          isOpen={showMaintenance} 
+          setIsOpen={setShowMaintenance} 
+          pageName={href.replace('/', '')} 
+        />
+      )}
+      <li>
+        <Link
+          href={href}
+          onClick={handleClick}
+          className={clsx(
+            'relative block px-3 py-2 transition',
+            isActive
+              ? 'text-blue-500 dark:text-blue-400'
+              : 'hover:text-blue-500 dark:hover:text-blue-400'
+          )}
+        >
+          {children}
+          {isActive && (
+            <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0" />
+          )}
+        </Link>
+      </li>
+    </>
   )
 }
-
 function DesktopNavigation(props) {
   return (
     <nav {...props}>
@@ -166,7 +230,7 @@ function DesktopNavigation(props) {
         <NavItem href="/articles">Blog</NavItem>
         <NavItem href="/projects">Projects</NavItem>
         <NavItem href="/courses">Courses</NavItem>
-        <NavItem href="/contact">Contact</NavItem>
+        {/* <NavItem href="/contact">Contact</NavItem> */}
         {/* <NavItem href="/speaking">Speaking</NavItem> */}
         <NavItem href="/uses">Uses</NavItem>
       </ul>
@@ -249,7 +313,156 @@ function Avatar({ large = false, className, ...props }) {
   )
 }
 
+function SearchDialog({ isOpen, setIsOpen }) {
+  const [query, setQuery] = useState('')
+  const [results, setResults] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+  const inputRef = useRef(null)
+  const [blogPosts, setBlogPosts] = useState([])
+
+  // ... kode fetch blog posts tetap sama ...
+
+  if (!isOpen) return null
+
+  return (
+    <div className="fixed inset-0 z-50">
+      {/* Backdrop dengan blur yang lebih kuat */}
+      <div 
+        className="fixed inset-0 bg-white/60 backdrop-blur-lg dark:bg-zinc-900/60"
+        onClick={() => setIsOpen(false)}
+      />
+      
+      {/* Posisikan dialog lebih ke bawah */}
+      <div className="fixed left-1/2 top-40 w-full max-w-xl -translate-x-1/2 px-4">
+        <div className="overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-black/5 dark:bg-zinc-900 dark:ring-white/10">
+          <div className="relative">
+            <SearchIcon className="pointer-events-none absolute left-5 top-4 h-5 w-5 text-zinc-400 dark:text-zinc-500" />
+            <input
+              ref={inputRef}
+              type="text"
+              placeholder="Search blog posts..."
+              spellCheck={false}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className="block w-full appearance-none bg-transparent py-4 pl-12 pr-4 text-base text-zinc-900 placeholder:text-zinc-400 focus:outline-none dark:text-zinc-100 dark:placeholder:text-zinc-500 sm:text-sm"
+            />
+          </div>
+          
+          {query && (
+            <div className="border-t border-zinc-100 dark:border-zinc-800">
+              {isLoading ? (
+                <div className="py-6 text-center text-sm text-zinc-600 dark:text-zinc-400">
+                  Searching...
+                </div>
+              ) : results.length > 0 ? (
+                <ul className="max-h-[calc(100vh-300px)] overflow-y-auto px-4 py-3">
+                  {results.map((post) => (
+                    <li 
+                      key={post.id}
+                      onClick={() => {
+                        window.location.href = `/blog/${post.slug}`
+                        setIsOpen(false)
+                      }}
+                      className="cursor-pointer px-2 py-2.5 text-sm text-zinc-900 hover:bg-zinc-50 dark:text-zinc-100 dark:hover:bg-zinc-800/50 rounded"
+                    >
+                      <div className="font-medium">{post.title}</div>
+                      {post.description && (
+                        <div className="mt-1 text-xs text-zinc-600 dark:text-zinc-400 line-clamp-2">
+                          {post.description}
+                        </div>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <div className="py-6 text-center text-sm text-zinc-600 dark:text-zinc-400">
+                  No results found.
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
+function UnderMaintenanceDialog({ isOpen, setIsOpen, pageName }) {
+  useEffect(() => {
+    if (isOpen) {
+      const timer = setTimeout(() => {
+        setIsOpen(false)
+      }, 1000)
+      return () => clearTimeout(timer)
+    }
+  }, [isOpen, setIsOpen])
+ 
+  if (!isOpen) return null
+ 
+  return (
+    <div 
+      className="fixed right-4 top-20 z-50 w-[300px]" // Ubah posisi ke pojok kanan atas
+      style={{
+        transform: `translateY(${isOpen ? '0' : '-20px'})`,
+        opacity: isOpen ? 1 : 0,
+        transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
+      }}
+    >
+      <div 
+        className="overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-black/5 dark:bg-zinc-900 dark:ring-white/10"
+        style={{
+          boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+          animation: isOpen ? 'popup 0.4s cubic-bezier(0.16, 1, 0.3, 1)' : 'none'
+        }}
+      >
+        <div className="px-4 py-5">
+          <h3 className="text-lg font-semibold text-center text-zinc-900 dark:text-zinc-100">
+            Under Maintenance
+          </h3>
+          <p className="mt-2 text-sm text-center text-zinc-600 dark:text-zinc-400">
+            The {pageName} page is currently under maintenance. Please check back later.
+          </p>
+          <div className="mt-5 flex justify-center">
+            <button
+              type="button"
+              className="inline-flex justify-center rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+              onClick={() => setIsOpen(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+ }
+ 
+ // Update keyframes untuk animasi dari atas
+ const styles = `
+  @keyframes popup {
+    0% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+ `
+ 
+ if (typeof document !== 'undefined') {
+  const styleSheet = document.createElement('style')
+  styleSheet.textContent = styles
+  document.head.appendChild(styleSheet)
+ }
+
 export function Header() {
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [maintenanceOpen, setMaintenanceOpen] = useState(false)
+  const [maintenancePage, setMaintenancePage] = useState('')
+  const router = useRouter()
   let isHomePage = useRouter().pathname === '/'
 
   let headerRef = useRef()
@@ -352,8 +565,23 @@ export function Header() {
     }
   }, [isHomePage])
 
+  const handleNavigation = (href) => {
+    if (href === '/courses' || href === '/contact') {
+      setMaintenancePage(href.replace('/', ''))
+      setMaintenanceOpen(true)
+    } else {
+      router.push(href)
+    }
+  }
+
   return (
     <>
+      <SearchDialog isOpen={isSearchOpen} setIsOpen={setIsSearchOpen} />  
+      <UnderMaintenanceDialog 
+        isOpen={maintenanceOpen} 
+        setIsOpen={setMaintenanceOpen}
+        pageName={maintenancePage}
+      />
       <header
         className="pointer-events-none relative z-50 flex flex-col"
         style={{
@@ -415,7 +643,14 @@ export function Header() {
                 <DesktopNavigation className="pointer-events-auto hidden md:block" />
               </div>
               <div className="flex justify-end md:flex-1">
-                <div className="pointer-events-auto">
+                <div className="pointer-events-auto flex items-center gap-4">
+                  <button
+                    type="button"
+                    className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+                    onClick={() => setIsSearchOpen(true)}
+                  >
+                    <SearchIcon className="h-6 w-6 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
+                  </button>
                   <ModeToggle />
                 </div>
               </div>

@@ -65,16 +65,16 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I'm Majid, a versatile Software Engineer with over 3 years of experience in building diverse technology solutions. My expertise spans web development and mobile applications. I specialize in developing scalable applications across multiple platforms, leveraging modern technologies and best practices to create efficient, user-centric solutions. From implementing complex algorithms to optimizing system performance, I'm passionate about delivering innovative solutions that solve real-world challenges.
+                I&apos;m Majid, a versatile Software Engineer with over 3 years of experience in building diverse technology solutions. My expertise spans web development and mobile applications. I specialize in developing scalable applications across multiple platforms, leveraging modern technologies and best practices to create efficient, user-centric solutions. From implementing complex algorithms to optimizing system performance, I&lsquo;m passionate about delivering innovative solutions that solve real-world challenges.
               </p>
               <p>
-                Throughout my journey, I've mastered various modern technologies and frameworks, 
-                constantly pushing the boundaries of what's possible in web development. 
-                I take pride in transforming complex problems into elegant, efficient solutions that not only meet but exceed client expectations. Whether it's architecting new applications from the ground up, optimizing existing systems, or implementing cutting-edge features, 
+                Throughout my journey, I&apos;ve mastered various modern technologies and frameworks, 
+                constantly pushing the boundaries of what&apos;s possible in web development. 
+                I take pride in transforming complex problems into elegant, efficient solutions that not only meet but exceed client expectations. Whether it&apos;s architecting new applications from the ground up, optimizing existing systems, or implementing cutting-edge features, 
                 I approach each project with enthusiasm and attention to detail.
               </p>
               <p>
-                Programming isn't just my profession—it's my craft and calling. I thrive on staying ahead of industry trends and best practices, ensuring that every line of code I write contributes to creating impactful digital experiences. My commitment to clean, 
+                Programming isn&apos;t just my profession—it&lsquo;s my craft and calling. I thrive on staying ahead of industry trends and best practices, ensuring that every line of code I write contributes to creating impactful digital experiences. My commitment to clean, 
                 maintainable code and user-centric design has helped businesses achieve their digital transformation goals.
               </p>
               <p>
