@@ -61,12 +61,11 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-                Hey there! 👋🏻 I'm Majid | Turning Ideas into Digital Reality
+                Hey there! 👋🏻 | Thanks for comming.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I'm a passionate Software Engineer with over 3 years of dedicated experience crafting robust web solutions. My expertise lies in building seamless end-to-end web applications, 
-                where I blend creative front-end design with powerful backend architecture to create exceptional user experiences.
+                I'm Majid, a versatile Software Engineer with over 3 years of experience in building diverse technology solutions. My expertise spans web development and mobile applications. I specialize in developing scalable applications across multiple platforms, leveraging modern technologies and best practices to create efficient, user-centric solutions. From implementing complex algorithms to optimizing system performance, I'm passionate about delivering innovative solutions that solve real-world challenges.
               </p>
               <p>
                 Throughout my journey, I've mastered various modern technologies and frameworks, 

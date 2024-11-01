@@ -4,38 +4,39 @@ import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoAnimaginary from '@/images/logos/animaginary.svg'
-import youphoria from '@/images/logos/YOUphoria.png'
-import orb from '@/images/logos/orb.gif'
+import ikklan from '@/images/logos/ikklan.png'
+import chart from '@/images/logos/chart.png'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoHeart from '@/images/logos/gwc.png'
+import shyna from '@/images/logos/shyna.png'
 
 const projects = [
   {
-    name: 'YOUphoria: A comprehensive sex education app for teens',
+    name: 'IKK LAN RI: Custom Development',
     description:
-      "YOUphoria is built with Flutter and Firebase Authentication for seamless user experience and secure data handling. Google Maps API provides location-based resources, and ChatGPT API is leveraged to create an inclusive, age-appropriate AI chatbot, addressing teens' nuanced questions with personalized responses.",
+      "IKK LAN RI custom website using Java Spring Framework for the back-end and Vue.js for the front-end, focusing on key features such as: User Registration with Admin Approval, File Upload/Download Handling, Data Filtering.",
     link: {
-      href: 'https://github.com/halcyonCore/youphoria',
-      label: 'GitHub',
+      href: 'https://ikk.lan.go.id',
+      label: 'Live',
     },
-    logo: youphoria,
+    logo: ikklan,
   },
   {
-    name: 'Tailwind Animation Exploration',
+    name: 'Chart Generator: Web Development',
     description:
-      'Leveraging Tailwind CSS, this captivating one-page project showcases mesmerizing animations and innovative blend modes for striking color and movement',
+      'This project aims to create a web application using Laravel that can generate charts and export them to DOCX format. The application will include a content management system (CMS) to help users manage data easily.',
     link: {
-      href: 'https://tailwind-animation-exploration.vercel.app/',
-      label: 'tailwind-animation-exploration.vercel.app/',
+      href: 'https://chart.yaumulmajid.com',
+      label: 'Live',
     },
-    logo: orb,
+    logo: chart,
   },
   {
-    name: 'Girls Who Code TXST',
+    name: 'Company Profile: Web Development',
     description:
-      "I've created the entire structure of our Girls Who Code chapter, including our website! It utilizes Stripe's API to accept donations that fund our events and activities.",
-    link: { href: 'http://gwc-txst.com', label: 'gwc-txst.com' },
-    logo: logoHeart,
+      "Build a dynamic and interactive company website using Laravel. Showcase company information, including services, products, team, and portfolio. Enable the company to manage a Content Management System (CMS).",
+    link: { href: 'https://github.com/yaumulmajid/laravel-company-profile.git',
+            label: 'Github' },
+    logo: shyna,
   },
   {
     name: 'Java vs. C++',
@@ -71,15 +72,15 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Victoria Jordan</title>
+        <title>Projects - Yaumul Majid</title>
         <meta
           name="description"
           content="Things I’ve made trying to put my dent in the universe."
         />
       </Head>
       <SimpleLayout
-        title="A couple of my favorite personal projects."
-        intro="This summer, I learned about the trifecta that is React, Next.js, and TailwindCSS. I haven't looked back since!"
+        title="Beyond the Screen Personal Projects."
+        intro="Where vision meets innovation, I craft digital solutions that transform ideas into engaging experiences. Every project tells a unique story of possibility and purpose."
       >
         <ul
           role="list"
@@ -99,7 +100,7 @@ export default function Projects() {
                 <Card.Link href={project.link.href}>{project.name}</Card.Link>
               </h2>
               <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-blue-500 dark:text-zinc-200">
                 <LinkIcon className="h-6 w-6 flex-none" />
                 <span className="ml-2">{project.link.label}</span>
               </p>

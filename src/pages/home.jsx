@@ -253,18 +253,16 @@ export default function Home({ articles }) {
             Software Engineer, DevOps enthusiast and Lifelong Learner.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I&apos;m Majid, a dedicated developer who transforms ideas into powerful web solutions. 
-            With expertise in full-stack development, I'm passionate about creating intuitive applications that solve real-world problems. 
-            I believe in continuous learning and staying at the forefront of technology to deliver the best digital experiences.
+            I&apos;m Majid, a versatile Software Engineer with over 3 years of experience in building diverse technology solutions. My expertise spans web development and mobile applications. I specialize in developing scalable applications across multiple platforms, leveraging modern technologies and best practices to create efficient, user-centric solutions.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://github.com/vjordan-cs"
+              href="https://github.com/yaumulmajid"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com/in/victoria-jordan01/"
+              href="https://linkedin.com/in/yaumulmajidd/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
