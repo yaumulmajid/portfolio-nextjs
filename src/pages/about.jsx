@@ -65,7 +65,7 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I&apos;m Majid, a versatile Software Engineer with over 3 years of experience in building diverse technology solutions. My expertise spans web development and mobile applications. I specialize in developing scalable applications across multiple platforms, leveraging modern technologies and best practices to create efficient, user-centric solutions. From implementing complex algorithms to optimizing system performance, I&lsquo;m passionate about delivering innovative solutions that solve real-world challenges.
+                I&apos;m Majid, a Software Engineer with over 3 years of experience in building diverse technology solutions. My expertise spans web development and mobile applications. I specialize in developing scalable applications across multiple platforms, leveraging modern technologies and best practices to create efficient, user-centric solutions. From implementing complex algorithms to optimizing system performance, I&lsquo;m passionate about delivering innovative solutions that solve real-world challenges.
               </p>
               <p>
                 Throughout my journey, I&apos;ve mastered various modern technologies and frameworks, 
