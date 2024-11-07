@@ -8,6 +8,11 @@ import ikklan from '@/images/logos/ikklan.png'
 import chart from '@/images/logos/chart.png'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import shyna from '@/images/logos/shyna.png'
+// Import preview images
+import ikklanPreview from '@/images/projects/ikklan.png'
+// import chartPreview from '@/images/projects/chart-preview.jpg'
+// import shynaPreview from '@/images/projects/shyna-preview.jpg'
+// import javaPreview from '@/images/projects/java-preview.jpg'
 
 const projects = [
   {
@@ -19,6 +24,7 @@ const projects = [
       label: 'Live',
     },
     logo: ikklan,
+    preview: ikklanPreview, // Add preview image
   },
   {
     name: 'Chart Generator: Web Development',
@@ -29,14 +35,18 @@ const projects = [
       label: 'Live',
     },
     logo: chart,
+    // preview: chartPreview, // Add preview image
   },
   {
     name: 'Company Profile: Web Development',
     description:
       "Build a dynamic and interactive company website using Laravel. Showcase company information, including services, products, team, and portfolio. Enable the company to manage a Content Management System (CMS).",
-    link: { href: 'https://github.com/yaumulmajid/laravel-company-profile.git',
-            label: 'Github' },
+    link: { 
+      href: 'https://github.com/yaumulmajid/laravel-company-profile.git',
+      label: 'Github' 
+    },
     logo: shyna,
+    // preview: shynaPreview, // Add preview image
   },
   {
     name: 'Java vs. C++',
@@ -47,14 +57,8 @@ const projects = [
       label: 'cpp-vs-java.vercel.app',
     },
     logo: logoAnimaginary,
+    // preview: javaPreview, // Add preview image
   },
-  // {
-  //   name: 'OpenShuttle',
-  //   description:
-  //     'The schematics for the first rocket I designed that successfully made it to orbit.',
-  //   link: { href: '#', label: 'github.com' },
-  //   logo: logoOpenShuttle,
-  // },
 ]
 
 function LinkIcon(props) {
@@ -75,7 +79,7 @@ export default function Projects() {
         <title>Projects - Yaumul Majid</title>
         <meta
           name="description"
-          content="Things I’ve made trying to put my dent in the universe."
+          content="Where vision meets innovation, I craft digital solutions that transform ideas into engaging experiences."
         />
       </Head>
       <SimpleLayout
@@ -88,7 +92,19 @@ export default function Projects() {
         >
           {projects.map((project) => (
             <Card as="li" key={project.name}>
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              {/* Preview Image */}
+              <div className="relative w-full h-48 mb-6 overflow-hidden rounded-lg z-30"> {/* z-30 lebih tinggi */}
+                <Image
+                  src={project.preview}
+                  alt={project.name}
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  fill
+                  unoptimized
+                />
+              </div>
+              
+              {/* Existing Content */}
+              <div className="relative z-10 flex h-12 w-12 left-50 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                 <Image
                   src={project.logo}
                   alt=""

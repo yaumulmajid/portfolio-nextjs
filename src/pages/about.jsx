@@ -44,7 +44,7 @@ export default function About() {
         <title>About - Yaumul Majid</title>
         <meta
           name="description"
-          content="I'm Victoria Jordan. A leader, artist, and frontend enthusiast in Austin, TX."
+          content="I'm Yaumul Majid. A Software Engineer, DevOps enthusiast, and Lifelong Learner."
         />
       </Head>
       <Container className="mt-16 sm:mt-32">

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://yaumulmajid.com
+
+# Sitemaps
+Sitemap: https://yaumulmajid.com/sitemap.xml
