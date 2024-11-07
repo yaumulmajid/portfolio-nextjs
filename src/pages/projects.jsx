@@ -19,6 +19,10 @@ const projects = [
     name: 'IKK LAN RI: Custom Development',
     description:
       "IKK LAN RI custom website using Java Spring Framework for the back-end and Vue.js for the front-end, focusing on key features such as: User Registration with Admin Approval, File Upload/Download Handling, Data Filtering.",
+    techStack: [
+        { name: "Vue.js", color: "bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400" },
+        { name: "Java SpringBoot", color: "bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400" }
+      ],
     link: {
       href: 'https://ikk.lan.go.id',
       label: 'Live',
@@ -30,35 +34,32 @@ const projects = [
     name: 'Chart Generator: Web Development',
     description:
       'This project aims to create a web application using Laravel that can generate charts and export them to DOCX format. The application will include a content management system (CMS) to help users manage data easily.',
-    link: {
+    techStack: [
+        { name: "Laravel", color: "bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400" },
+        { name: "Tailwind CSS", color: "bg-cyan-100 text-cyan-600 dark:bg-cyan-900/30 dark:text-cyan-400" }
+      ],
+      link: {
       href: 'https://chart.yaumulmajid.com',
       label: 'Live',
     },
     logo: chart,
-    // preview: chartPreview, // Add preview image
+    preview: ikklanPreview, // Add preview image
   },
   {
     name: 'Company Profile: Web Development',
     description:
       "Build a dynamic and interactive company website using Laravel. Showcase company information, including services, products, team, and portfolio. Enable the company to manage a Content Management System (CMS).",
-    link: { 
+    techStack: [
+        { name: "Laravel", color: "bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400" }
+      ],
+    
+      link: { 
       href: 'https://github.com/yaumulmajid/laravel-company-profile.git',
       label: 'Github' 
     },
     logo: shyna,
-    // preview: shynaPreview, // Add preview image
-  },
-  {
-    name: 'Java vs. C++',
-    description:
-      'Creating an ad-free website that highlights the syntax differences between Java and C++ to benefit the curriculum of my Object Oriented Programming class.',
-    link: {
-      href: 'https://cpp-vs-java.vercel.app/',
-      label: 'cpp-vs-java.vercel.app',
-    },
-    logo: logoAnimaginary,
-    // preview: javaPreview, // Add preview image
-  },
+    preview: ikklanPreview, // Add preview image
+  }
 ]
 
 function LinkIcon(props) {
@@ -93,7 +94,7 @@ export default function Projects() {
           {projects.map((project) => (
             <Card as="li" key={project.name}>
               {/* Preview Image */}
-              <div className="relative w-full h-48 mb-6 overflow-hidden rounded-lg z-30"> {/* z-30 lebih tinggi */}
+              <div className="relative w-full h-48 mb-6 overflow-hidden rounded-lg z-30">
                 <Image
                   src={project.preview}
                   alt={project.name}
@@ -102,16 +103,24 @@ export default function Projects() {
                   unoptimized
                 />
               </div>
-              
-              {/* Existing Content */}
-              <div className="relative z-10 flex h-12 w-12 left-50 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <Image
-                  src={project.logo}
-                  alt=""
-                  className="h-8 w-8 rounded-full"
-                  unoptimized
-                />
-              </div>
+
+              {/* Tech Stack Section - Sekarang akan tetap terlihat saat hover */}
+              {project.techStack && (
+                <div className="mb-4 z-40 relative"> {/* Menambahkan z-40 dan relative untuk memastikan tetap terlihat */}
+                  <div className="flex flex-wrap gap-2">
+                    {project.techStack.map((tech) => (
+                      <span
+                        key={tech.name}
+                        className={`inline-flex px-2.5 py-1 rounded-full text-xs font-medium ${tech.color} transition-colors`}
+                      >
+                        {tech.name}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Rest of the content */}
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
                 <Card.Link href={project.link.href}>{project.name}</Card.Link>
               </h2>
