@@ -7,7 +7,7 @@ import logoAnimaginary from '@/images/logos/animaginary.svg'
 import ikklan from '@/images/logos/ikklan.png'
 import chart from '@/images/logos/chart.png'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import shyna from '@/images/logos/shyna.png'
+// import shyna from '@/images/logos/shyna.png'
 // Import preview images
 import ikklanPreview from '@/images/projects/ikklan.png'
 import chartPreview from '@/images/projects/chartgenerator.png'
