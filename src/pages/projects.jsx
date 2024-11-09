@@ -27,7 +27,6 @@ const projects = [
       href: 'https://ikk.lan.go.id',
       label: 'Live',
     },
-    logo: ikklan,
     preview: ikklanPreview, // Add preview image
   },
   {
@@ -42,7 +41,6 @@ const projects = [
       href: 'https://chart.yaumulmajid.com',
       label: 'Live',
     },
-    logo: chart,
     preview: chartPreview, // Add preview image
   },
   {
@@ -57,7 +55,6 @@ const projects = [
       href: 'https://github.com/yaumulmajid/laravel-company-profile.git',
       label: 'Github' 
     },
-    logo: shyna,
     preview: shynaPreview, // Add preview image
   }
 ]
