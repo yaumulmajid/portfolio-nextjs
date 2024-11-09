@@ -14,15 +14,16 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'
+          node-version: '23'
           
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm install
         
       - name: Build Application
         run: |
           npm run build
-          npx next-sitemap --config next-sitemap.config.js
+          npx next-sitemap
         
       - name: Deploy to VPS
         uses: appleboy/ssh-action@master
