@@ -20,7 +20,9 @@ jobs:
         run: npm install
         
       - name: Build Application
-        run: npm run build
+        run: |
+          npm run build
+          npx next-sitemap --config next-sitemap.config.js
         
       - name: Deploy to VPS
         uses: appleboy/ssh-action@master
