@@ -10,8 +10,8 @@ import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import shyna from '@/images/logos/shyna.png'
 // Import preview images
 import ikklanPreview from '@/images/projects/ikklan.png'
-// import chartPreview from '@/images/projects/chart-preview.jpg'
-// import shynaPreview from '@/images/projects/shyna-preview.jpg'
+import chartPreview from '@/images/projects/chartgenerator.png'
+import shynaPreview from '@/images/projects/compro.png'
 // import javaPreview from '@/images/projects/java-preview.jpg'
 
 const projects = [
@@ -43,7 +43,7 @@ const projects = [
       label: 'Live',
     },
     logo: chart,
-    preview: ikklanPreview, // Add preview image
+    preview: chartPreview, // Add preview image
   },
   {
     name: 'Company Profile: Web Development',
@@ -58,7 +58,7 @@ const projects = [
       label: 'Github' 
     },
     logo: shyna,
-    preview: ikklanPreview, // Add preview image
+    preview: shynaPreview, // Add preview image
   }
 ]
 
@@ -72,7 +72,6 @@ function LinkIcon(props) {
     </svg>
   )
 }
-
 export default function Projects() {
   return (
     <>
@@ -89,7 +88,7 @@ export default function Projects() {
       >
         <ul
           role="list"
-          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-12 sm:grid-cols-2 lg:grid-cols-3"
         >
           {projects.map((project) => (
             <Card as="li" key={project.name}>
@@ -104,14 +103,14 @@ export default function Projects() {
                 />
               </div>
 
-              {/* Tech Stack Section - Sekarang akan tetap terlihat saat hover */}
+              {/* Tech Stack Section */}
               {project.techStack && (
-                <div className="mb-4 z-40 relative"> {/* Menambahkan z-40 dan relative untuk memastikan tetap terlihat */}
+                <div className="mb-4 z-40 relative">
                   <div className="flex flex-wrap gap-2">
                     {project.techStack.map((tech) => (
                       <span
                         key={tech.name}
-                        className={`inline-flex px-2.5 py-1 rounded-full text-xs font-medium ${tech.color} transition-colors`}
+                        className={`inline-flex px-2.5 py-1 rounded-full text-xs font-medium ${tech.color}`}
                       >
                         {tech.name}
                       </span>
