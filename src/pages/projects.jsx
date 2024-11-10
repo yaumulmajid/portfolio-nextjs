@@ -38,7 +38,7 @@ const projects = [
         { name: "Tailwind CSS", color: "bg-cyan-100 text-cyan-600 dark:bg-cyan-900/30 dark:text-cyan-400" }
       ],
       link: {
-      href: 'https://chart.yaumulmajid.com',
+      href: 'http://chart.yaumulmajid.com/',
       label: 'Live',
     },
     preview: chartPreview, // Add preview image
