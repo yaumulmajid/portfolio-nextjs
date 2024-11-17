@@ -33,4 +33,4 @@ jobs:
             cd /home/yaumulmajid/apps/portfolio-nextjs
             git pull origin master
             npm run build
-            pm2 restart portfolio-nextjs || pm2 start npm --name "portfolio-nextjs" -- start
+            pm2 restart portfolio-nextjs || pm2 start npm --name "portfolio-nextjs" -- start 
