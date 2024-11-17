@@ -1,5 +1,5 @@
 import { Container } from '@/components/Container'
-import { ChatBot } from '@/components/ChatBot'
+import { ChatBot } from '@/components/Chatbot'
 
 export function SimpleLayout({ title, intro, children }) {
   return (
