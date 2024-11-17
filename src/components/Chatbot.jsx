@@ -138,7 +138,7 @@ What would you like to know more about ?`;
   
       return (
         <div className="space-y-4">
-          <p>📱 Let's Connect!</p>
+          <p>📱 Let&apos;s Connect!</p>
           
           <div className="space-y-2">
             <a 
@@ -183,7 +183,7 @@ What would you like to know more about ?`;
           </div>
   
           <div className="mt-4">
-            <p>I'm always open to discussing :</p>
+            <p>I&apos;m always open to discussing :</p>
             <ul className="list-disc list-inside mt-2 space-y-1">
               <li>Project Collaborations</li>
               <li>Job Opportunities</li>
