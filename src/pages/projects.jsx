@@ -3,7 +3,6 @@ import Head from 'next/head'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { ChatBot } from '@/components/ChatBot'
 import logoAnimaginary from '@/images/logos/animaginary.svg'
 import ikklan from '@/images/logos/ikklan.png'
 import chart from '@/images/logos/chart.png'

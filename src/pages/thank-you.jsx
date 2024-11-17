@@ -1,7 +1,6 @@
 import Head from 'next/head'
 
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { ChatBot } from '@/components/ChatBot'
 
 export default function ThankYou() {
   return (
