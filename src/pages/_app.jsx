@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import Head from 'next/head'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import { ChatBot } from '@/components/ChatBot'
 
 import '@/styles/tailwind.css'
 import 'focus-visible'
@@ -50,6 +51,7 @@ export default function App({ Component, pageProps, router }) {
         </main>
         <Footer />
       </div>
+      <ChatBot /> 
     </>
   )
 }
