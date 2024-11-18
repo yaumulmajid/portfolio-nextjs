@@ -2,10 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Send, User, MessageSquare, X, Mail, Github, Linkedin, Phone } from 'lucide-react';
 
 export function ChatBot() {
-  const [messages, setMessages] = useState([
-    {
-      type: 'bot',
-      content: `Hello! 👋 I'm Chat Assistant.
+  const initialMessage = {
+    type: 'bot',
+    content: `Hello! 👋 I'm Chat Assistant.
 
 I can tell you about :
 
@@ -15,8 +14,9 @@ I can tell you about :
 • Contact Info 📱
 
 What would you like to know ?`
-    }
-  ]);
+  };
+
+  const [messages, setMessages] = useState([initialMessage]);
   const [inputMessage, setInputMessage] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
@@ -26,7 +26,6 @@ What would you like to know ?`
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // Existing getBotResponse function remains the same
   const getBotResponse = (message) => {
     const lowerMsg = message.toLowerCase();
     
@@ -52,19 +51,33 @@ DevOps & Tools
 Would you like to know more about any specific skill ?`;
     }
     
-    // ... rest of the response logic remains the same ...
+    // If no matching response is found, return an error message and the initial options
+    return `I apologize, I didn't quite understand that. 🤔
+
+Let me help you better. You can ask me about:
+
+• Skills & Tech Stack 🚀
+• Education 🎓
+• Work Experience 👨‍💻
+• Contact Info 📱
+
+Please choose one of these topics and I'll be happy to help!`;
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!inputMessage.trim()) return;
 
+    // Add user message
     setMessages(prev => [...prev, { type: 'user', content: inputMessage }]);
     setInputMessage('');
     
+    // Show typing indicator
     setIsTyping(true);
     await new Promise(resolve => setTimeout(resolve, 1000));
     setIsTyping(false);
 
+    // Get and add bot response
     const response = getBotResponse(inputMessage);
     setMessages(prev => [...prev, { type: 'bot', content: response }]);
   };
@@ -151,7 +164,7 @@ Would you like to know more about any specific skill ?`;
         dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800 
         rounded-lg shadow-2xl mb-4 backdrop-blur-lg border border-zinc-200/50 dark:border-zinc-700/50
       `}>
-        {/* Enhanced header styling */}
+        {/* Header */}
         <div className="bg-black from-zinc-50 to-white dark:from-zinc-800 dark:to-zinc-900 p-3 flex items-center justify-between rounded-t-lg border-b border-zinc-200/50 dark:border-zinc-700/50">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-gradient-to-br from-zinc-100 to-white dark:from-zinc-700 dark:to-zinc-800 rounded-full flex items-center justify-center shadow-inner">
@@ -170,7 +183,7 @@ Would you like to know more about any specific skill ?`;
           </button>
         </div>
 
-        {/* Enhanced messages container */}
+        {/* Messages Container */}
         <div className="h-[400px] overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-transparent via-white/50 to-zinc-50/50 dark:from-transparent dark:via-zinc-900/50 dark:to-zinc-800/50">
           {messages.map((message, index) => (
             <div key={index} className={`flex items-start gap-2 ${
@@ -204,7 +217,7 @@ Would you like to know more about any specific skill ?`;
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Enhanced input area */}
+        {/* Input Area */}
         <form onSubmit={handleSubmit} className="p-3 border-t border-zinc-200/50 dark:border-zinc-700/50 bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-800 dark:to-zinc-900 rounded-b-lg">
           <div className="relative">
             <input
@@ -230,7 +243,7 @@ Would you like to know more about any specific skill ?`;
         </form>
       </div>
 
-      {/* Enhanced toggle button */}
+      {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`${
