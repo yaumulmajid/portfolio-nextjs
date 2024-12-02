@@ -50,6 +50,22 @@ DevOps & Tools
 
 Would you like to know more about any specific skill ?`;
     }
+
+    if (lowerMsg.includes('contact')) {
+      return `📱 Let's Connect!
+  
+  - Email: yaumulmajid@gmail.com
+  - LinkedIn: linkedin.com/in/yaumulmajidd  
+  - GitHub: github.com/yaumulmajid
+  - Phone: +62 81282132875
+  
+  I'm always open to discussing:
+  - Project Collaborations
+  - Job Opportunities  
+  - Technical Discussions
+  
+  Feel free to reach out !`;
+    }
     
     // If no matching response is found, return an error message and the initial options
     return `I apologize, I didn't quite understand that. 🤔
